@@ -387,7 +387,7 @@ class ObsidianLatexSectionConverter:
         
         return comment + content
 
-    def convert(self):
+    def convert(self, level_adjustment=0):
         """
         Convert an Obsidian markdown file to a LaTeX section
         

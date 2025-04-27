@@ -8,6 +8,7 @@ import argparse
 import logging
 from pathlib import Path
 
+# Update import to match the class name in converter.py
 from .converter import ObsidianLatexSectionConverter
 
 
@@ -58,7 +59,7 @@ Examples:
             verbose=args.verbose
         )
         
-        # Perform the conversion
+        # Perform the conversion with level adjustment
         latex_content = converter.convert(level_adjustment=args.level_adjust)
         if latex_content:
             success = converter.save(latex_content)
