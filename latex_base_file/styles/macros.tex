@@ -1,0 +1,20 @@
+% macros.tex - Custom Macros File
+
+% Shortcut for including figures
+\newcommand{\includegraphicswithcaption}[3]{
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=#2\textwidth]{#1}
+        \caption{#3}
+        \label{fig:#1}
+    \end{figure}
+}
+
+% Shortcut for emphasizing text
+\newcommand{\important}[1]{\textcolor{red}{\textbf{#1}}}
+
+% Commonly used math expressions
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+
+% Other macros...

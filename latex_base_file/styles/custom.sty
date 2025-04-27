@@ -1,0 +1,32 @@
+% custom.sty - Custom LaTeX Style File
+
+% ───── Essential packages ─────
+\usepackage{amsmath}      % Advanced math formatting
+\usepackage{graphicx}     % Include images
+\usepackage{hyperref}     % Hyperlinks in the document
+\usepackage{xcolor}       % Custom colors
+
+% ───── Custom colors ─────
+\definecolor{blueAPE}{RGB}{0, 0, 119}
+\definecolor{lightgray}{gray}{0.95}
+\definecolor{darkred}{RGB}{160, 0, 0} % optional accent
+
+% ───── Fancy headers and footers ─────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header content
+\fancyhead[L]{\nouppercase{\leftmark}}  % Current section title
+\fancyhead[R]{\thepage}
+
+% Footer (optional)
+% \fancyfoot[L]{UANDES}
+% \fancyfoot[R]{\today}
+
+% Ensure header spacing is correct
+\setlength{\headheight}{14.6pt}
+
+% ───── Custom commands ─────
+\newcommand{\mycommand}[1]{\textbf{#1}}  % Example: bold command
+\newcommand{\highlight}[1]{\textcolor{blueAPE}{#1}} % Highlight with APE blue

@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article} % Document class and options
+
+% Preamble (optional)
+\input{preamble}
+
+% Define parameters for the title page
+\newcommand{\Title}{Artificial Inteligence}  % Main title
+\newcommand{\Subtitle}{Tarea No1}  % Subtitle
+\newcommand{\AuthorName}{Nicolás Mora Bowen}  % Author's name
+\newcommand{\Date}{\today}  % Date
+\newcommand{\LogoPath}{figures/base/Logo-UAndes.jpg}
+\newcommand{\LogoWidth}{0.75\textwidth}  % Width of the logo image
+
+% Begin document
+\begin{document}
+
+% Include the parametric title page
+\input{sections/titlepage}
+\clearpage
+
+% Table of contents
+\pagenumbering{gobble}
+\tableofcontents
+\clearpage
+
+% Start numbering from the first section
+\pagenumbering{arabic}
+
+% Sections
+\input{sections/introduction}
+\clearpage
+\input{sections/methods}
+\clearpage
+\input{sections/results}
+\clearpage
+\input{sections/discussion}
+\clearpage
+\input{sections/conclusion}
+\clearpage
+
+% Bibliography
+\nocite{*} % To add all bibliography from the .bib file without the need to cite it.
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

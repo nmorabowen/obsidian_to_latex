@@ -1,0 +1,69 @@
+% Preamble: load packages, set configurations, etc.
+
+% Font package
+\usepackage{fontspec}
+
+% Set main font
+\setmainfont{Archivo Narrow} % Replace with your preferred font
+
+% Language settings
+\usepackage[spanish]{babel}
+
+% Math packages
+\usepackage{amsmath, amssymb}
+
+% Headings with Bold + Italic
+\usepackage{titlesec}
+
+% Margins and spacing
+\usepackage[a4paper, margin=2.5cm]{geometry}  % márgenes razonables
+\usepackage{setspace}
+\onehalfspacing  % o \doublespacing para trabajos más largos
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\itshape}  % Bold + Italic for \section
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\itshape}  % Bold + Italic for \subsection
+  {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\itshape}  % Bold + Italic for \subsubsection
+  {\thesubsubsection}{1em}{}
+
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries\itshape}  % Bold + Italic for \paragraph
+  {\theparagraph}{1em}{}
+
+\titleformat{\subparagraph}[runin]
+  {\normalfont\normalsize\bfseries\itshape}  % Bold + Italic for \subparagraph
+  {\thesubparagraph}{1em}{}
+
+% Set fancyhdr parameters
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.6pt}
+
+  % Figures and captions
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Tables
+\usepackage{booktabs}
+
+% Custom commands or macros
+\input{styles/macros}
+
+% Load custom style if any
+\usepackage{styles/custom}
+
+% Load package to force image position
+\usepackage{float}
