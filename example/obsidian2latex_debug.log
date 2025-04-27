@@ -1,0 +1,63 @@
+2025-04-27 16:26:15,867 - INFO - Initializing converter: input=c:\Users\nmora\Documents\GitHub\obsidian_to_latex\example\test-obsidian-file.md, output=output.tex
+2025-04-27 16:26:15,868 - INFO - Starting conversion of c:\Users\nmora\Documents\GitHub\obsidian_to_latex\example\test-obsidian-file.md
+2025-04-27 16:26:15,869 - DEBUG - Normalized input path: c:\Users\nmora\Documents\GitHub\obsidian_to_latex\example\test-obsidian-file.md
+2025-04-27 16:26:15,869 - DEBUG - Reading content from c:\Users\nmora\Documents\GitHub\obsidian_to_latex\example\test-obsidian-file.md
+2025-04-27 16:26:15,870 - DEBUG - Successfully read 1904 characters
+2025-04-27 16:26:15,870 - DEBUG - First 100 characters: '---\ntitle: "Math Expressions in Obsidian"\ntags: [math, test, example]\n---\n\n# Introduction to Math in'
+2025-04-27 16:26:15,871 - DEBUG - Extracting frontmatter
+2025-04-27 16:26:15,871 - DEBUG - Attempting to extract frontmatter
+2025-04-27 16:26:15,872 - DEBUG - Found frontmatter: title: "Math Expressions in Obsidian"
+tags: [math, test, example]
+2025-04-27 16:26:15,872 - DEBUG - Extracted frontmatter: {'title': '"Math Expressions in Obsidian"', 'tags': '[math, test, example]'}
+2025-04-27 16:26:15,872 - DEBUG - Starting conversion process
+2025-04-27 16:26:15,873 - DEBUG - Step 1: Removing frontmatter
+2025-04-27 16:26:15,873 - DEBUG - Removing frontmatter
+2025-04-27 16:26:15,874 - DEBUG - First 50 chars after frontmatter removal: '# Introduction to Math in Obsidian\n\nThis document '
+2025-04-27 16:26:15,875 - DEBUG - Step 2: Removing comments
+2025-04-27 16:26:15,875 - DEBUG - Removing comments
+2025-04-27 16:26:15,876 - DEBUG - Step 3: Converting headers
+2025-04-27 16:26:15,876 - DEBUG - Converting headers
+2025-04-27 16:26:15,876 - DEBUG - Converting level 1 headers to \section
+2025-04-27 16:26:15,877 - ERROR - Error converting headers: bad escape \s at position 0
+2025-04-27 16:26:15,878 - ERROR - Traceback (most recent call last):
+  File "c:\Users\nmora\Documents\GitHub\obsidian_to_latex\obsidian_to_latex\converter.py", line 181, in convert_headers
+    content = re.sub(pattern, replacement, content, flags=re.MULTILINE)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\re\__init__.py", line 186, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\re\__init__.py", line 334, in _compile_template
+    return _sre.template(pattern, _parser.parse_template(repl, pattern))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\re\_parser.py", line 1075, in parse_template
+    raise s.error('bad escape %s' % this, len(this)) from None
+re.error: bad escape \s at position 0
+
+2025-04-27 16:26:15,878 - DEBUG - Step 4: Converting lists
+2025-04-27 16:26:15,879 - DEBUG - Converting lists
+2025-04-27 16:26:15,879 - DEBUG - Processing list block 1 of 3
+2025-04-27 16:26:15,880 - DEBUG - Processing list block 2 of 3
+2025-04-27 16:26:15,880 - DEBUG - Processing list block 3 of 3
+2025-04-27 16:26:15,880 - DEBUG - Step 5: Converting images
+2025-04-27 16:26:15,881 - DEBUG - Converting images
+2025-04-27 16:26:15,881 - DEBUG - Processing Obsidian image syntax
+2025-04-27 16:26:15,881 - DEBUG - Processing image: sample_image.png -> sample_image.png
+2025-04-27 16:26:15,882 - DEBUG - Processing standard Markdown image syntax
+2025-04-27 16:26:15,882 - DEBUG - Step 6: Converting internal links
+2025-04-27 16:26:15,882 - DEBUG - Converting internal links
+2025-04-27 16:26:15,883 - DEBUG - Step 7: Converting emphasis
+2025-04-27 16:26:15,884 - DEBUG - Converting emphasis
+2025-04-27 16:26:15,884 - DEBUG - Step 8: Converting code blocks
+2025-04-27 16:26:15,885 - DEBUG - Converting code blocks
+2025-04-27 16:26:15,885 - DEBUG - Processing code block with language: python
+2025-04-27 16:26:15,886 - DEBUG - Step 9: Preserving math
+2025-04-27 16:26:15,886 - DEBUG - Preserving math environments
+2025-04-27 16:26:15,887 - DEBUG - Step 10: Adding section comment
+2025-04-27 16:26:15,887 - DEBUG - Adding section comment
+2025-04-27 16:26:15,888 - INFO - Conversion completed successfully
+2025-04-27 16:26:15,888 - DEBUG - Final content length: 2240 characters
+2025-04-27 16:26:15,889 - DEBUG - Saving content to output.tex (mode: overwrite)
+2025-04-27 16:26:15,889 - DEBUG - Output file already exists: output.tex
+2025-04-27 16:26:15,890 - INFO - LaTeX content saved to 'output.tex'
+2025-04-27 16:26:15,891 - DEBUG - Processing images
+2025-04-27 16:26:15,891 - WARNING - No attachments directory found. You may need to manually copy images.

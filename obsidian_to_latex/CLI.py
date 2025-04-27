@@ -37,6 +37,9 @@ Examples:
   
   Adjust header levels:
     obsidian2latex my_note.md -o sections/my_section.tex -l 1
+    
+  Handle existing files:
+    obsidian2latex my_note.md -o sections/my_section.tex --overwrite backup
         """
     )
     
@@ -45,7 +48,10 @@ Examples:
     parser.add_argument('-f', '--figures', default='figures', help='Figures directory (default: figures)')
     parser.add_argument('-l', '--level-adjust', type=int, default=0, 
                         help='Adjust header levels by this amount (default: 0)')
+    parser.add_argument('--overwrite', choices=['overwrite', 'backup', 'skip'], default='overwrite',
+                       help='How to handle existing files (default: overwrite)')
     parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose output')
+    parser.add_argument('--log-file', default='obsidian2latex.log', help='Log file path (default: obsidian2latex.log)')
     
     args = parser.parse_args()
     logger = setup_logging(args.verbose)
@@ -56,16 +62,21 @@ Examples:
             input_file=args.input_file,
             output_file=args.output,
             figures_dir=args.figures,
-            verbose=args.verbose
+            verbose=args.verbose,
+            log_file=args.log_file
         )
         
         # Perform the conversion with level adjustment
         latex_content = converter.convert(level_adjustment=args.level_adjust)
         if latex_content:
-            success = converter.save(latex_content)
+            success = converter.save(latex_content, overwrite_mode=args.overwrite)
             if success:
-                converter.process_images()
-                logger.info(f"Conversion completed successfully: {args.output}")
+                # Only process images if we didn't skip the file
+                if not (args.overwrite == 'skip' and Path(args.output).exists()):
+                    converter.process_images()
+                    logger.info(f"Conversion completed successfully: {args.output}")
+                else:
+                    logger.info(f"Existing file was not modified: {args.output}")
                 
                 # Provide helpful next steps
                 logger.info(f"To include this section in your main LaTeX document, add:")
